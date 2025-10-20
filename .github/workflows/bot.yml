@@ -2,7 +2,7 @@ name: CENAOS Telegram Bot
 
 on:
   schedule:
-  - cron: 0 20 * * *
+  - cron: 15 20 * * *
   workflow_dispatch:
 
 jobs:
