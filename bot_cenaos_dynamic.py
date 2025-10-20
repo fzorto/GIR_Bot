@@ -28,8 +28,8 @@ async def send_album(chat_id: int | str, context: ContextTypes.DEFAULT_TYPE):
 # --- Comandos ---
 async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "👋 Envío las imágenes del WRF (Precipitación 24h, Tmax, Tmin).\n"
-        "Usa /modelos para recibirlas ahora. Publico al canal a las 14:00."
+        "👋 Envío las imágenes del WRF de Cenaos (Precipitación 24h, 48h, 72h).\n"
+        "Usa /modelos para recibirlas ahora. Publico al canal a las 7:00."
     )
 
 async def cmd_modelos(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -51,7 +51,7 @@ async def post_init(app: Application):
         jq.start()
 
     # Programar a las 14:00 hora de Tegucigalpa
-    app.job_queue.run_daily(job_post, time(hour=14, minute=15, tzinfo=TZ), name="post_14")
+    app.job_queue.run_daily(job_post, time(hour=7, minute=0, tzinfo=TZ), name="post_7")
 
 
 def main():
@@ -67,5 +67,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
