@@ -51,7 +51,7 @@ async def post_init(app: Application):
         jq.start()
 
     # Programar a las 14:00 hora de Tegucigalpa
-    app.job_queue.run_daily(job_post, time(hour=14, minute=0, tzinfo=TZ), name="post_14")
+    app.job_queue.run_daily(job_post, time(hour=14, minute=15, tzinfo=TZ), name="post_14")
 
 
 def main():
@@ -67,4 +67,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
