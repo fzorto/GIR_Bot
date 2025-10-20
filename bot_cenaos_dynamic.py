@@ -12,8 +12,8 @@ load_dotenv()
 TZ = ZoneInfo("America/Tegucigalpa")
 IMAGES = [
     "https://cenaos.copeco.gob.hn/productos/wrf/00/precipitacion/wrf24hrs.png",
-    "https://cenaos.copeco.gob.hn/productos/wrf/00/TemperaturaMaxima/d1.png",
-    "https://cenaos.copeco.gob.hn/productos/wrf/00/TemperaturaMinima/d1.png",
+    "https://cenaos.copeco.gob.hn/productos/wrf/00/precipitacion/wrf48hrs.png",
+    "https://cenaos.copeco.gob.hn/productos/wrf/00/precipitacion/wrf72hrs.png",
 ]
 PAGE = "https://cenaos.copeco.gob.hn/modelosnum.html"
 
@@ -67,3 +67,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
