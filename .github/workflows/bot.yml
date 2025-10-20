@@ -1,0 +1,2 @@
+  TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+  CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
