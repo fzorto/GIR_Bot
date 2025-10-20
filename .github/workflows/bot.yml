@@ -2,13 +2,12 @@ name: CENAOS Telegram Bot
 
 on:
   schedule:
-    - cron: "40 13 * * *"     # ejecuta todos los días a las 07:00 hora Tegucigalpa (13:00 UTC)
-  workflow_dispatch:          # permite lanzarlo manualmente desde la pestaña "Actions"
+    - cron: "*/5 * * * *"   # se ejecuta cada 5 minutos
+  workflow_dispatch:
 
 jobs:
   run:
     runs-on: ubuntu-latest
-    environment: production   # usa el Environment donde guardaste tus secrets
     steps:
       - uses: actions/checkout@v4
 
@@ -21,8 +20,9 @@ jobs:
         run: |
           pip install python-telegram-bot==20.7 python-dotenv tzdata
 
-      - name: Ejecutar bot CENAOS
+      - name: Ejecutar bot
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         run: python bot_cenaos_dynamic.py
+
