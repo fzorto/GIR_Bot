@@ -19,6 +19,7 @@ jobs:
       - name: Instalar dependencias
         run: |
           pip install python-telegram-bot==20.7 python-dotenv tzdata
+          pip install python-telegram-bot[job-queue]
 
       - name: Ejecutar bot
         env:
